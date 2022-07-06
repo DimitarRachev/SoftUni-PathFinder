@@ -24,12 +24,15 @@ public class UserEntity extends BaseEntity {
     private LevelEnum level;
 
     @Column
+    private String email;
+
+    @Column
     private String password;
 
     @Column
     private String username;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<RoleEntity> roles;
 
     public UserEntity() {
